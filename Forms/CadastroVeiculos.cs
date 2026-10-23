@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -34,7 +35,31 @@ namespace EstacionamentoAuthSoft.Forms
             string modelo = txtModelo.Text;
             string cor = txtCor.Text;
 
-            veiculoRepositories.Cadastrar(placa,modelo,cor);
+            if (ChecarCamposVazios(placa,modelo,cor))
+            {
+                veiculoRepositories.Cadastrar(placa, modelo, cor);
+            }
         }
-    }
+
+        private bool ChecarCamposVazios(string placa, string modelo, string cor)
+        {
+            if(placa == "")
+            {
+                MessageBox.Show("O campo de placa deve ser preenchido","Campo Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if(modelo == "")
+            {
+                MessageBox.Show("O campo de modelo deve ser preenchido", "Campo Inválido", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
+            }else if(cor == "")
+            {
+                MessageBox.Show("O campo de cor deve ser preenchido", "Campo Inválido", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 }
