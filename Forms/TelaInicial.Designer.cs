@@ -105,7 +105,7 @@
             this.tableLayoutEstacionamento.Controls.Add(this.btnConsulta, 2, 1);
             this.tableLayoutEstacionamento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutEstacionamento.Location = new System.Drawing.Point(5, 5);
-            this.tableLayoutEstacionamento.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutEstacionamento.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutEstacionamento.Name = "tableLayoutEstacionamento";
             this.tableLayoutEstacionamento.RowCount = 2;
             this.tableLayoutEstacionamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -124,7 +124,7 @@
             this.tableLayoutPanelVeiculos.Controls.Add(this.btnListar, 1, 1);
             this.tableLayoutPanelVeiculos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelVeiculos.Location = new System.Drawing.Point(5, 441);
-            this.tableLayoutPanelVeiculos.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanelVeiculos.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanelVeiculos.Name = "tableLayoutPanelVeiculos";
             this.tableLayoutPanelVeiculos.RowCount = 2;
             this.tableLayoutPanelVeiculos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -179,7 +179,7 @@
             this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelVeiculos, 0, 1);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelMain.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanelMain.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 2;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -193,8 +193,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 873);
             this.Controls.Add(this.tableLayoutPanelMain);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "TelaInicial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela Inicial";
             this.tableLayoutEstacionamento.ResumeLayout(false);
             this.tableLayoutPanelVeiculos.ResumeLayout(false);
