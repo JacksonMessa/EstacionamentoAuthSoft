@@ -37,7 +37,11 @@ namespace EstacionamentoAuthSoft.Forms
 
             if (ChecarCamposVazios(placa,modelo,cor))
             {
-                veiculoRepositories.Cadastrar(placa, modelo, cor);
+                placa = FormatarPlaca(placa);
+                if (ValidarPlaca(placa))
+                {
+                    veiculoRepositories.Cadastrar(placa, modelo, cor);
+                }
             }
         }
 
@@ -62,4 +66,27 @@ namespace EstacionamentoAuthSoft.Forms
                 return true;
             }
         }
+
+        private string FormatarPlaca(string placa)
+        {
+            if (placa.Length == 8 && placa[3] == '-')
+            {
+                placa = placa.Remove(3, 1);
+            }
+
+            return placa.ToUpper();
+        }
+
+        private bool ValidarPlaca(string placa)
+        {
+            string padrao = @"^[A-Z]{3}[0-9][A-Z0-9][0-9]{2}$";
+
+            bool placaevalida = Regex.IsMatch(placa, padrao);
+            if(!placaevalida)
+            {
+                MessageBox.Show("O campo de placa deve conter o formato antigo 'ABC1234' ou Mercosul 'ABC1D23'", "Campo Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return placaevalida;
+        }
+    }
 }
