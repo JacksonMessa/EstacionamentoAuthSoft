@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EstacionamentoAuthSoft.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace EstacionamentoAuthSoft
         public TelaInicial()
         {
             InitializeComponent();
+        }
+
+        private void BtnCadastrar_Click(object sender, EventArgs e)
+        {
+            CadastroVeiculos cadastroVeiculos = new CadastroVeiculos();
+
+            cadastroVeiculos.Show();
+
+            this.Hide();
         }
     }
 }
