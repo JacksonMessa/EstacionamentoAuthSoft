@@ -96,6 +96,7 @@
             this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "Cadastrar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // txtCor
             // 

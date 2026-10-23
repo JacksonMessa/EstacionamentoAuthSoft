@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EstacionamentoAuthSoft.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,17 @@ namespace EstacionamentoAuthSoft.Forms
 
             telaInicial.Show();
             this.Close();
+        }
+
+        private void BtnSalvar_Click(object sender, EventArgs e)
+        {
+            VeiculoRepositorie veiculoRepositories = new VeiculoRepositorie();
+
+            string placa = txtPlaca.Text;
+            string modelo = txtModelo.Text;
+            string cor = txtCor.Text;
+
+            veiculoRepositories.Cadastrar(placa,modelo,cor);
         }
     }
 }
