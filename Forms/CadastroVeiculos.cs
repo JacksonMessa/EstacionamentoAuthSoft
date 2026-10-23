@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,26 @@ namespace EstacionamentoAuthSoft.Forms
                 placa = FormatarPlaca(placa);
                 if (ValidarPlaca(placa))
                 {
-                    veiculoRepositories.Cadastrar(placa, modelo, cor);
+                    try
+                    {
+                        veiculoRepositories.Cadastrar(placa, modelo, cor);
+                        MessageBox.Show("Veiculo cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        if (ex.ErrorCode == 19)
+                        {
+                            MessageBox.Show("Esta placa já está cadastrada no sistema!", "Placa Duplicada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Ocorreu um erro inesperado no banco de dados: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ocorreu um erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
