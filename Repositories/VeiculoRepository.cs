@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -81,6 +82,25 @@ namespace EstacionamentoAuthSoft.Repositories
                     cmd.Parameters.AddWithValue("@placa", placa);
                     cmd.Parameters.AddWithValue("@modelo", modelo);
                     cmd.Parameters.AddWithValue("@cor", cor);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    bool houveLinhasAfetadas = cmd.ExecuteNonQuery() > 0;
+                    return houveLinhasAfetadas;
+                }
+            }
+        }
+
+        public bool Excluir(int id)
+        {
+            string sqlDelete = "Delete from veiculo " +
+                "where id = @id;";
+
+            using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
+            {
+                conexao.Open();
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlDelete, conexao))
+                {
                     cmd.Parameters.AddWithValue("@id", id);
 
                     bool houveLinhasAfetadas = cmd.ExecuteNonQuery() > 0;

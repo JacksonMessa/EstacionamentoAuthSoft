@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,10 +30,16 @@ namespace EstacionamentoAuthSoft.Forms
 
         private void ListarVeiculos_Load(object sender, EventArgs e)
         {
+            dataGridVeiculos.AutoGenerateColumns = false;
+            CarregarLista();
+        }
+
+        private void CarregarLista()
+        {
             VeiculoRepository veiculoRepository = new VeiculoRepository();
             List<Veiculo> veiculos = veiculoRepository.ObterTodosOsVeiculos();
 
-            dataGridVeiculos.AutoGenerateColumns = false;
+            
             dataGridVeiculos.DataSource = veiculos;
         }
 
@@ -53,7 +60,34 @@ namespace EstacionamentoAuthSoft.Forms
                 cadastroVeiculos.Show();
 
                 this.Hide();
+            }else if(nomeColuna == "botoesExcluir")
+            {
+                Veiculo veiculo = (Veiculo)dataGridVeiculos.Rows[e.RowIndex].DataBoundItem;
+
+                DialogResult resultado = MessageBox.Show($"Tem certeza que deseja excluir o veículo: {veiculo.Modelo} {veiculo.Cor} de placa {veiculo.Placa}","Excluir Veículo",MessageBoxButtons.YesNo);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    VeiculoRepository veiculoRepository = new VeiculoRepository();
+
+                    try
+                    {
+
+                        veiculoRepository.Excluir(veiculo.Id);
+                        MessageBox.Show("Veiculo excluido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CarregarLista();
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        MessageBox.Show($"Ocorreu um erro inesperado no banco de dados: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ocorreu um erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
+
         }
     }
 }
