@@ -1,4 +1,5 @@
-﻿using EstacionamentoAuthSoft.Repositories;
+﻿using EstacionamentoAuthSoft.Models;
+using EstacionamentoAuthSoft.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,22 +16,49 @@ namespace EstacionamentoAuthSoft.Forms
 {
     public partial class CadastroVeiculos : Form
     {
+        private Veiculo veiculoEdicao;
         public CadastroVeiculos()
         {
             InitializeComponent();
         }
 
+        public CadastroVeiculos(Veiculo veiculoEdição)
+        {
+            this.veiculoEdicao = veiculoEdição;
+            InitializeComponent();
+        }
+
+        private void CadastroVeiculos_Load(object sender, EventArgs e)
+        {
+            if (veiculoEdicao != null)
+            {
+                txtPlaca.Text = veiculoEdicao.Placa;
+                txtModelo.Text = veiculoEdicao.Modelo;
+                txtCor.Text = veiculoEdicao.Cor;
+
+                lblTitulo.Text = "Edição de Veículo";
+                btnSalvar.Text = "Editar";
+            }
+        }
+
         private void BtnVoltar_Click(object sender, EventArgs e)
         {
-            TelaInicial telaInicial = new TelaInicial();
-
-            telaInicial.Show();
+            if(veiculoEdicao == null){
+                TelaInicial telaInicial = new TelaInicial();
+                telaInicial.Show();
+            }
+            else
+            {
+                ListarVeiculos listarVeiculos = new ListarVeiculos();
+                listarVeiculos.Show();
+            }
+            
             this.Close();
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            VeiculoRepository veiculoRepositories = new VeiculoRepository();
+            VeiculoRepository veiculoRepository = new VeiculoRepository();
 
             string placa = txtPlaca.Text;
             string modelo = txtModelo.Text;
@@ -43,8 +71,17 @@ namespace EstacionamentoAuthSoft.Forms
                 {
                     try
                     {
-                        veiculoRepositories.Cadastrar(placa, modelo, cor);
-                        MessageBox.Show("Veiculo cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if(veiculoEdicao == null)
+                        {
+                            veiculoRepository.Cadastrar(placa, modelo, cor);
+                            MessageBox.Show("Veiculo cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            veiculoRepository.Editar(veiculoEdicao.Id, placa, modelo, cor);
+                            MessageBox.Show("Veiculo editado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        
                     }
                     catch (SQLiteException ex)
                     {

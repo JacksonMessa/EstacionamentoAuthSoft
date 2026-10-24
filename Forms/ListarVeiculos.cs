@@ -29,11 +29,31 @@ namespace EstacionamentoAuthSoft.Forms
 
         private void ListarVeiculos_Load(object sender, EventArgs e)
         {
-            VeiculoRepository veiculoRepositorie = new VeiculoRepository();
-            List<Veiculo> veiculos = veiculoRepositorie.ObterTodosOsVeiculos();
+            VeiculoRepository veiculoRepository = new VeiculoRepository();
+            List<Veiculo> veiculos = veiculoRepository.ObterTodosOsVeiculos();
 
             dataGridVeiculos.AutoGenerateColumns = false;
             dataGridVeiculos.DataSource = veiculos;
+        }
+
+        private void DataGridVeiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            string nomeColuna = dataGridVeiculos.Columns[e.ColumnIndex].Name;
+
+            if (nomeColuna == "botoesEditar")
+            {
+                Veiculo veiculo = (Veiculo)dataGridVeiculos.Rows[e.RowIndex].DataBoundItem;
+
+                CadastroVeiculos cadastroVeiculos = new CadastroVeiculos(veiculo);
+                cadastroVeiculos.Show();
+
+                this.Hide();
+            }
         }
     }
 }

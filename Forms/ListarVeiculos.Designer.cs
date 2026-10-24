@@ -64,6 +64,7 @@
             this.dataGridVeiculos.RowTemplate.Height = 40;
             this.dataGridVeiculos.Size = new System.Drawing.Size(794, 356);
             this.dataGridVeiculos.TabIndex = 0;
+            this.dataGridVeiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridVeiculos_CellContentClick);
             // 
             // id
             // 

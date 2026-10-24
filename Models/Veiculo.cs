@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EstacionamentoAuthSoft.Models
 {
-    internal class Veiculo
+    public class Veiculo
     {
         public Veiculo(int id, string placa, string modelo, string cor)
         {

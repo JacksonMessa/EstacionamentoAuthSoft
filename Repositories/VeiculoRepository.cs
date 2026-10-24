@@ -65,5 +65,28 @@ namespace EstacionamentoAuthSoft.Repositories
 
             return veiculos;
         }
+
+        public bool Editar(int id, string placa, string modelo, string cor)
+        {
+            string sqlUpdate = "Update Veiculo " +
+                "set placa = @placa, modelo = @modelo, cor = @cor " +
+                "where id = @id;";
+
+            using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
+            {
+                conexao.Open();
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlUpdate, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@placa", placa);
+                    cmd.Parameters.AddWithValue("@modelo", modelo);
+                    cmd.Parameters.AddWithValue("@cor", cor);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    bool houveLinhasAfetadas = cmd.ExecuteNonQuery() > 0;
+                    return houveLinhasAfetadas;
+                }
+            }
+        }
     }
 }
