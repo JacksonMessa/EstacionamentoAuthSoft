@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,6 +33,37 @@ namespace EstacionamentoAuthSoft.Repositories
                 }
             }
 
+        }
+
+        public List<Veiculo> ObterTodosOsVeiculos()
+        {
+            List<Veiculo> veiculos = new List<Veiculo>();
+            string sqlSelect = "SELECT id, placa, modelo, cor FROM veiculo;";
+
+            using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
+            {
+                conexao.Open();
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlSelect, conexao))
+                {
+                    using (SQLiteDataReader leitor = cmd.ExecuteReader())
+                    {
+                        while (leitor.Read())
+                        {
+                            Veiculo veiculo = new Veiculo(
+                                Convert.ToInt32(leitor["id"]),
+                                leitor["placa"].ToString(),
+                                leitor["modelo"].ToString(),
+                                leitor["cor"].ToString()
+                            );
+
+                            veiculos.Add(veiculo);
+                        }
+                    }
+                }
+            }
+
+            return veiculos;
         }
     }
 }

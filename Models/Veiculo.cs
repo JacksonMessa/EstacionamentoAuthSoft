@@ -8,8 +8,9 @@ namespace EstacionamentoAuthSoft.Models
 {
     internal class Veiculo
     {
-        public Veiculo(string placa, string modelo, string cor)
+        public Veiculo(int id, string placa, string modelo, string cor)
         {
+            this.Id = id;
             this.Placa = placa;
             this.Modelo = modelo;
             this.Cor = cor;

@@ -158,6 +158,7 @@
             this.Name = "ListarVeiculos";
             this.Text = "Lista de Veículos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ListarVeiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVeiculos)).EndInit();
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
