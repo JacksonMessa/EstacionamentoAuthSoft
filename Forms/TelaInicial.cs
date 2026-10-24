@@ -26,5 +26,14 @@ namespace EstacionamentoAuthSoft
 
             this.Hide();
         }
+
+        private void BtnListar_Click(object sender, EventArgs e)
+        {
+            ListarVeiculos cadastroVeiculos = new ListarVeiculos();
+
+            cadastroVeiculos.Show();
+
+            this.Hide();
+        }
     }
 }
