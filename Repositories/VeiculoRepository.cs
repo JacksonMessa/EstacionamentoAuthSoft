@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace EstacionamentoAuthSoft.Repositories
 {
-    internal class VeiculoRepositorie
+    internal class VeiculoRepository
     {
         private readonly string conexaoString = @"Data Source=..\..\Data\estacionamento.db;Version=3;";
 

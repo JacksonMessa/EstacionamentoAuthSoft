@@ -30,7 +30,7 @@ namespace EstacionamentoAuthSoft.Forms
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            VeiculoRepositorie veiculoRepositories = new VeiculoRepositorie();
+            VeiculoRepository veiculoRepositories = new VeiculoRepository();
 
             string placa = txtPlaca.Text;
             string modelo = txtModelo.Text;

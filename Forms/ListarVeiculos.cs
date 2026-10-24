@@ -29,7 +29,7 @@ namespace EstacionamentoAuthSoft.Forms
 
         private void ListarVeiculos_Load(object sender, EventArgs e)
         {
-            VeiculoRepositorie veiculoRepositorie = new VeiculoRepositorie();
+            VeiculoRepository veiculoRepositorie = new VeiculoRepository();
             List<Veiculo> veiculos = veiculoRepositorie.ObterTodosOsVeiculos();
 
             dataGridVeiculos.AutoGenerateColumns = false;
