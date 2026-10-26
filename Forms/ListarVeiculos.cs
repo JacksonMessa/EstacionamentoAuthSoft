@@ -79,9 +79,16 @@ namespace EstacionamentoAuthSoft.Forms
                         }
                         else 
                         {
-                            veiculoRepository.Excluir(veiculo.Id);
-                            MessageBox.Show("Veiculo excluido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            CarregarLista();
+                            if (veiculoRepository.Excluir(veiculo.Id))
+                            {
+                                MessageBox.Show("Veiculo excluido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                CarregarLista();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ocorreu um erro inesperado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+ 
                         }
                     }
                     catch (SQLiteException ex)

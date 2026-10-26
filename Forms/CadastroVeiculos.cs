@@ -73,13 +73,25 @@ namespace EstacionamentoAuthSoft.Forms
                     {
                         if(veiculoEdicao == null)
                         {
-                            veiculoRepository.Cadastrar(placa, modelo, cor);
-                            MessageBox.Show("Veiculo cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if(veiculoRepository.Cadastrar(placa, modelo, cor))
+                            {
+                                MessageBox.Show("Veiculo cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ocorreu um erro inesperado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            veiculoRepository.Editar(veiculoEdicao.Id, placa, modelo, cor);
-                            MessageBox.Show("Veiculo editado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if(veiculoRepository.Editar(veiculoEdicao.Id, placa, modelo, cor))
+                            {
+                                MessageBox.Show("Veiculo editado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ocorreu um erro inesperado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         
                     }
