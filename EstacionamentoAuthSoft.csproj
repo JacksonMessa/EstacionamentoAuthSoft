@@ -78,6 +78,7 @@
     <Compile Include="Forms\TelaInicial.Designer.cs">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Estadia.cs" />
     <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
