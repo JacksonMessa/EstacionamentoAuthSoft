@@ -92,14 +92,15 @@ namespace EstacionamentoAuthSoft.Repositories
                             DateTime entrada = Convert.ToDateTime(leitor["entrada"]);
 
                             ConsultarEstacionados consultarEstacionados = new ConsultarEstacionados();
+                            int permanencia = CalculoEstadia.CalcularPermanencia(entrada);
 
                             VeiculoEstacionadoDTO veiculo = new VeiculoEstacionadoDTO(
                                 Convert.ToInt32(leitor["id"]),
                                 leitor["placa"].ToString(),
                                 leitor["modelo"].ToString(),
                                 entrada.ToString(),
-                                CalculoEstadia.CalcularPermanencia(entrada),
-                                "R$0"
+                                permanencia + " min",
+                                CalculoEstadia.ObterValorEstadia(permanencia)
                             );
                             veiculos.Add(veiculo);
                         }

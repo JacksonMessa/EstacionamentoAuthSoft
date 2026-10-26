@@ -54,23 +54,23 @@
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel.RowCount = 2;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel.Size = new System.Drawing.Size(1184, 358);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(1924, 854);
             this.tableLayoutPanel.TabIndex = 3;
             // 
             // btnVoltar
             // 
             this.btnVoltar.AutoSize = true;
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(11, 13);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(11, 13, 0, 4);
+            this.btnVoltar.Location = new System.Drawing.Point(29, 31);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(29, 31, 0, 10);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(95, 41);
+            this.btnVoltar.Size = new System.Drawing.Size(299, 114);
             this.btnVoltar.TabIndex = 9;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -81,10 +81,10 @@
             this.btnRecarregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRecarregar.AutoSize = true;
             this.btnRecarregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecarregar.Location = new System.Drawing.Point(1013, 13);
-            this.btnRecarregar.Margin = new System.Windows.Forms.Padding(0, 13, 11, 4);
+            this.btnRecarregar.Location = new System.Drawing.Point(1386, 31);
+            this.btnRecarregar.Margin = new System.Windows.Forms.Padding(0, 31, 29, 10);
             this.btnRecarregar.Name = "btnRecarregar";
-            this.btnRecarregar.Size = new System.Drawing.Size(160, 41);
+            this.btnRecarregar.Size = new System.Drawing.Size(509, 114);
             this.btnRecarregar.TabIndex = 10;
             this.btnRecarregar.Text = "Recarregar";
             this.btnRecarregar.UseVisualStyleBackColor = true;
@@ -106,14 +106,14 @@
             this.botoesSaida});
             this.tableLayoutPanel.SetColumnSpan(this.dataGridVeiculos, 2);
             this.dataGridVeiculos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridVeiculos.Location = new System.Drawing.Point(1, 59);
-            this.dataGridVeiculos.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridVeiculos.Location = new System.Drawing.Point(3, 157);
+            this.dataGridVeiculos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridVeiculos.Name = "dataGridVeiculos";
             this.dataGridVeiculos.ReadOnly = true;
             this.dataGridVeiculos.RowHeadersVisible = false;
             this.dataGridVeiculos.RowHeadersWidth = 51;
             this.dataGridVeiculos.RowTemplate.Height = 40;
-            this.dataGridVeiculos.Size = new System.Drawing.Size(1182, 298);
+            this.dataGridVeiculos.Size = new System.Drawing.Size(1918, 711);
             this.dataGridVeiculos.TabIndex = 0;
             // 
             // id
@@ -149,7 +149,7 @@
             this.entrada.MinimumWidth = 6;
             this.entrada.Name = "entrada";
             this.entrada.ReadOnly = true;
-            this.entrada.Width = 144;
+            this.entrada.Width = 178;
             // 
             // permanencia
             // 
@@ -159,17 +159,17 @@
             this.permanencia.MinimumWidth = 6;
             this.permanencia.Name = "permanencia";
             this.permanencia.ReadOnly = true;
-            this.permanencia.Width = 213;
+            this.permanencia.Width = 267;
             // 
             // valorAtual
             // 
             this.valorAtual.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.valorAtual.DataPropertyName = "valorAtual";
-            this.valorAtual.HeaderText = "Valor Atual";
+            this.valorAtual.HeaderText = "Valor Atual (R$)";
             this.valorAtual.MinimumWidth = 6;
             this.valorAtual.Name = "valorAtual";
             this.valorAtual.ReadOnly = true;
-            this.valorAtual.Width = 188;
+            this.valorAtual.Width = 218;
             // 
             // botoesSaida
             // 
@@ -180,15 +180,15 @@
             this.botoesSaida.ReadOnly = true;
             this.botoesSaida.Text = "Saida";
             this.botoesSaida.UseColumnTextForButtonValue = true;
-            this.botoesSaida.Width = 29;
+            this.botoesSaida.Width = 34;
             // 
             // ConsultarEstacionados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 358);
+            this.ClientSize = new System.Drawing.Size(1924, 854);
             this.Controls.Add(this.tableLayoutPanel);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ConsultarEstacionados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Veículos Estacionados";
