@@ -1,5 +1,7 @@
 ﻿using EstacionamentoAuthSoft.DTO;
+using EstacionamentoAuthSoft.Forms;
 using EstacionamentoAuthSoft.Models;
+using EstacionamentoAuthSoft.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -87,13 +89,18 @@ namespace EstacionamentoAuthSoft.Repositories
                     {
                         while (leitor.Read())
                         {
+                            DateTime entrada = Convert.ToDateTime(leitor["entrada"]);
+
+                            ConsultarEstacionados consultarEstacionados = new ConsultarEstacionados();
+
                             VeiculoEstacionadoDTO veiculo = new VeiculoEstacionadoDTO(
                                 Convert.ToInt32(leitor["id"]),
                                 leitor["placa"].ToString(),
                                 leitor["modelo"].ToString(),
-                                Convert.ToDateTime(leitor["entrada"]).ToString()
+                                entrada.ToString(),
+                                CalculoEstadia.CalcularPermanencia(entrada),
+                                "R$0"
                             );
-
                             veiculos.Add(veiculo);
                         }
                     }

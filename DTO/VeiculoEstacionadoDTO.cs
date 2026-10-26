@@ -16,12 +16,14 @@ namespace EstacionamentoAuthSoft.DTO
         public string Permanencia { get; set; }
         public string ValorAtual { get; set; }
 
-        public VeiculoEstacionadoDTO(int estadiaId, string placa, string modelo, string entrada)
+        public VeiculoEstacionadoDTO(int estadiaId, string placa, string modelo, string entrada, string permanencia, string valorAtual)
         {
             EstadiaId = estadiaId;
             Placa = placa;
             Modelo = modelo;
             Entrada = entrada;
+            Permanencia = permanencia;
+            ValorAtual = valorAtual;
         }
     }
 }
