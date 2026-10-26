@@ -150,12 +150,12 @@
             this.lblHorario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHorario.AutoSize = true;
             this.lblHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHorario.Location = new System.Drawing.Point(1522, 348);
+            this.lblHorario.Location = new System.Drawing.Point(1494, 348);
             this.lblHorario.Margin = new System.Windows.Forms.Padding(0);
             this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(122, 54);
+            this.lblHorario.Size = new System.Drawing.Size(177, 54);
             this.lblHorario.TabIndex = 11;
-            this.lblHorario.Text = "Data";
+            this.lblHorario.Text = "Horário";
             // 
             // datePickerEntrada
             // 
