@@ -110,5 +110,25 @@ namespace EstacionamentoAuthSoft.Repositories
 
             return veiculos;
         }
+
+        public bool RegistrarSaida(int estadiaId, string saida, int valorCentavos)
+        {
+            string sqlInsert = "Update estadia set saida = @saida, valor_centavos = @valor_centavos where id = @id;";
+
+            using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
+            {
+                conexao.Open();
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlInsert, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@saida", saida);
+                    cmd.Parameters.AddWithValue("@valor_centavos", valorCentavos);
+                    cmd.Parameters.AddWithValue("@id", estadiaId);
+
+                    bool houveLinhasAfetadas = cmd.ExecuteNonQuery() > 0;
+                    return houveLinhasAfetadas;
+                }
+            }
+        }
     }
 }

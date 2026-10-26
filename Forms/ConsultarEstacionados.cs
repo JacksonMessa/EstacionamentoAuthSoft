@@ -60,7 +60,7 @@ namespace EstacionamentoAuthSoft.Forms
             {
                 VeiculoEstacionadoDTO veiculo = (VeiculoEstacionadoDTO)dataGridVeiculos.Rows[e.RowIndex].DataBoundItem;
 
-                RegistrarSaida registrarSaida = new RegistrarSaida(veiculo.Placa);
+                RegistrarSaida registrarSaida = new RegistrarSaida(veiculo.Placa,veiculo.EstadiaId,Convert.ToDateTime(veiculo.Entrada));
                 registrarSaida.Show();
 
                 this.Hide();

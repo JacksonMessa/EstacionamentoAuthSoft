@@ -47,6 +47,11 @@ namespace EstacionamentoAuthSoft.Utils
                     return 40;
                 }
             }
-        } 
+        }
+
+        public static int ObterValorEstadiaEmCentavos(int permanencia)
+        {
+            return ObterValorEstadia(permanencia) * 100;
+        }
     }
 }
