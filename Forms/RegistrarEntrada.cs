@@ -73,7 +73,7 @@ namespace EstacionamentoAuthSoft.Forms
 
                     try
                     {
-                        if (estadiaRepository.RegistrarEntrada(veiculoId, entrada.ToString("yyyy-MM-dd HH: mm")))
+                        if (estadiaRepository.RegistrarEntrada(veiculoId, entrada.ToString("yyyy-MM-dd HH:mm")))
                         {
                             MessageBox.Show("Entrada registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
