@@ -76,6 +76,10 @@ namespace EstacionamentoAuthSoft.Forms
                             if(veiculoRepository.Cadastrar(placa, modelo, cor))
                             {
                                 MessageBox.Show("Veiculo cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                txtPlaca.Clear();
+                                txtModelo.Clear();
+                                txtCor.Clear();
                             }
                             else
                             {
