@@ -130,5 +130,49 @@ namespace EstacionamentoAuthSoft.Repositories
                 }
             }
         }
+
+        public List<ArrecadacaoDTO> ObterArrecadacoesPorDia(String data)
+        {
+            string sqlSelect = "SELECT e.id,v.placa,v.modelo,e.entrada,e.saida,e.valor_centavos" +
+                " FROM estadia as e, veiculo as v" +
+                " where saida IS NOT NULL AND v.id = e.veiculo_id" +
+                " AND saida Like @data || '%'";
+
+            List<ArrecadacaoDTO> arrecadacoes = new List<ArrecadacaoDTO>();
+
+            using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
+            {
+                conexao.Open();
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlSelect, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@data", data);
+
+                    using (SQLiteDataReader leitor = cmd.ExecuteReader())
+                    {
+                        while (leitor.Read())
+                        {
+                            DateTime entrada = Convert.ToDateTime(leitor["entrada"]);
+                            DateTime saida = Convert.ToDateTime(leitor["saida"]);
+
+                            ConsultarEstacionados consultarEstacionados = new ConsultarEstacionados();
+                            int permanencia = CalculoEstadia.CalcularPermanencia(entrada,saida);
+
+                            ArrecadacaoDTO arrecadacao = new ArrecadacaoDTO(
+                                leitor["placa"].ToString(),
+                                leitor["modelo"].ToString(),
+                                entrada.ToString(),
+                                saida.ToString(),
+                                permanencia + " min",
+                                Convert.ToInt32(leitor["valor_centavos"])/100
+                            );
+                            arrecadacoes.Add(arrecadacao);
+                        }
+                    }
+                }
+            }
+
+            return arrecadacoes;
+        }
     }
 }

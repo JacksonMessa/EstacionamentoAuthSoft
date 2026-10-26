@@ -30,18 +30,18 @@
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.dataGridVeiculos = new System.Windows.Forms.DataGridView();
+            this.dataGridArrecadacoes = new System.Windows.Forms.DataGridView();
+            this.datePickerFiltro = new System.Windows.Forms.DateTimePicker();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.permanencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorAtual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datePickerFiltro = new System.Windows.Forms.DateTimePicker();
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridVeiculos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridArrecadacoes)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
@@ -50,61 +50,85 @@
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel.Controls.Add(this.btnVoltar, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.dataGridVeiculos, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.dataGridArrecadacoes, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.datePickerFiltro, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.lblTotal, 1, 2);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel.RowCount = 3;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(925, 596);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(1924, 1055);
             this.tableLayoutPanel.TabIndex = 4;
             // 
             // btnVoltar
             // 
             this.btnVoltar.AutoSize = true;
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(11, 13);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(11, 13, 0, 4);
+            this.btnVoltar.Location = new System.Drawing.Point(29, 31);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(29, 31, 0, 10);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(112, 41);
+            this.btnVoltar.Size = new System.Drawing.Size(299, 64);
             this.btnVoltar.TabIndex = 9;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
             // 
-            // dataGridVeiculos
+            // dataGridArrecadacoes
             // 
-            this.dataGridVeiculos.AllowUserToAddRows = false;
-            this.dataGridVeiculos.AllowUserToDeleteRows = false;
-            this.dataGridVeiculos.AllowUserToOrderColumns = true;
-            this.dataGridVeiculos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridVeiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridVeiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridArrecadacoes.AllowUserToAddRows = false;
+            this.dataGridArrecadacoes.AllowUserToDeleteRows = false;
+            this.dataGridArrecadacoes.AllowUserToOrderColumns = true;
+            this.dataGridArrecadacoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridArrecadacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridArrecadacoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.placa,
             this.modelo,
             this.entrada,
             this.saida,
             this.permanencia,
-            this.valorAtual});
-            this.tableLayoutPanel.SetColumnSpan(this.dataGridVeiculos, 2);
-            this.dataGridVeiculos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridVeiculos.Location = new System.Drawing.Point(1, 60);
-            this.dataGridVeiculos.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.dataGridVeiculos.Name = "dataGridVeiculos";
-            this.dataGridVeiculos.ReadOnly = true;
-            this.dataGridVeiculos.RowHeadersVisible = false;
-            this.dataGridVeiculos.RowHeadersWidth = 51;
-            this.dataGridVeiculos.RowTemplate.Height = 40;
-            this.dataGridVeiculos.Size = new System.Drawing.Size(923, 474);
-            this.dataGridVeiculos.TabIndex = 0;
+            this.valor});
+            this.tableLayoutPanel.SetColumnSpan(this.dataGridArrecadacoes, 2);
+            this.dataGridArrecadacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridArrecadacoes.Location = new System.Drawing.Point(3, 107);
+            this.dataGridArrecadacoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridArrecadacoes.Name = "dataGridArrecadacoes";
+            this.dataGridArrecadacoes.ReadOnly = true;
+            this.dataGridArrecadacoes.RowHeadersVisible = false;
+            this.dataGridArrecadacoes.RowHeadersWidth = 51;
+            this.dataGridArrecadacoes.RowTemplate.Height = 40;
+            this.dataGridArrecadacoes.Size = new System.Drawing.Size(1918, 840);
+            this.dataGridArrecadacoes.TabIndex = 0;
+            // 
+            // datePickerFiltro
+            // 
+            this.datePickerFiltro.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.datePickerFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerFiltro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerFiltro.Location = new System.Drawing.Point(1294, 22);
+            this.datePickerFiltro.Margin = new System.Windows.Forms.Padding(3, 2, 29, 2);
+            this.datePickerFiltro.Name = "datePickerFiltro";
+            this.datePickerFiltro.Size = new System.Drawing.Size(601, 61);
+            this.datePickerFiltro.TabIndex = 10;
+            this.datePickerFiltro.ValueChanged += new System.EventHandler(this.DatePickerFiltro_ValueChanged);
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(1655, 975);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(3, 0, 21, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(248, 54);
+            this.lblTotal.TabIndex = 11;
+            this.lblTotal.Text = "Total: R$0";
             // 
             // id
             // 
@@ -139,7 +163,7 @@
             this.entrada.MinimumWidth = 6;
             this.entrada.Name = "entrada";
             this.entrada.ReadOnly = true;
-            this.entrada.Width = 144;
+            this.entrada.Width = 178;
             // 
             // saida
             // 
@@ -149,7 +173,7 @@
             this.saida.MinimumWidth = 6;
             this.saida.Name = "saida";
             this.saida.ReadOnly = true;
-            this.saida.Width = 116;
+            this.saida.Width = 143;
             // 
             // permanencia
             // 
@@ -159,54 +183,32 @@
             this.permanencia.MinimumWidth = 6;
             this.permanencia.Name = "permanencia";
             this.permanencia.ReadOnly = true;
-            this.permanencia.Width = 213;
+            this.permanencia.Width = 267;
             // 
-            // valorAtual
+            // valor
             // 
-            this.valorAtual.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.valorAtual.DataPropertyName = "valorAtual";
-            this.valorAtual.HeaderText = "Valor Atual (R$)";
-            this.valorAtual.MinimumWidth = 6;
-            this.valorAtual.Name = "valorAtual";
-            this.valorAtual.ReadOnly = true;
-            this.valorAtual.Width = 160;
-            // 
-            // datePickerFiltro
-            // 
-            this.datePickerFiltro.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.datePickerFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerFiltro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerFiltro.Location = new System.Drawing.Point(686, 4);
-            this.datePickerFiltro.Margin = new System.Windows.Forms.Padding(1, 1, 11, 1);
-            this.datePickerFiltro.Name = "datePickerFiltro";
-            this.datePickerFiltro.Size = new System.Drawing.Size(228, 50);
-            this.datePickerFiltro.TabIndex = 10;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(713, 543);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(1, 0, 8, 0);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(204, 44);
-            this.lblTotal.TabIndex = 11;
-            this.lblTotal.Text = "Total: R$0";
+            this.valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.valor.DataPropertyName = "valor";
+            this.valor.HeaderText = "Valor (R$)";
+            this.valor.MinimumWidth = 6;
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            this.valor.Width = 216;
             // 
             // Arrecadacoes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 596);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.tableLayoutPanel);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Arrecadacoes";
             this.Text = "Arrecadações";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Arrecadacoes_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridVeiculos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridArrecadacoes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,15 +217,15 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.DataGridView dataGridVeiculos;
+        private System.Windows.Forms.DataGridView dataGridArrecadacoes;
         private System.Windows.Forms.DateTimePicker datePickerFiltro;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn placa;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn saida;
         private System.Windows.Forms.DataGridViewTextBoxColumn permanencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorAtual;
-        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
     }
 }
