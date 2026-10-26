@@ -37,7 +37,7 @@ namespace EstacionamentoAuthSoft.Forms
         private void CarregarLista()
         {
             VeiculoRepository veiculoRepository = new VeiculoRepository();
-            List<Veiculo> veiculos = veiculoRepository.ObterTodosOsVeiculos();
+            List<Veiculo> veiculos = veiculoRepository.ObterTodosOsVeiculos(txtPlaca.Text,txtModelo.Text);
 
             
             dataGridVeiculos.DataSource = veiculos;
@@ -102,6 +102,16 @@ namespace EstacionamentoAuthSoft.Forms
                 }
             }
 
+        }
+
+        private void TxtPlaca_TextChanged(object sender, EventArgs e)
+        {
+            CarregarLista();
+        }
+
+        private void TxtModelo_TextChanged(object sender, EventArgs e)
+        {
+            CarregarLista();
         }
     }
 }

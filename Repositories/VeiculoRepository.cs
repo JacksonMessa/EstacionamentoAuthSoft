@@ -36,10 +36,12 @@ namespace EstacionamentoAuthSoft.Repositories
 
         }
 
-        public List<Veiculo> ObterTodosOsVeiculos()
+        public List<Veiculo> ObterTodosOsVeiculos(string placa, string modelo)
         {
             List<Veiculo> veiculos = new List<Veiculo>();
-            string sqlSelect = "SELECT id, placa, modelo, cor FROM veiculo;";
+            string sqlSelect = "SELECT id, placa, modelo, cor FROM veiculo " +
+                "where placa like '%' || @placa || '%' " +
+                "AND modelo like '%' || @modelo || '%'";
 
             using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
             {
@@ -47,6 +49,9 @@ namespace EstacionamentoAuthSoft.Repositories
 
                 using (SQLiteCommand cmd = new SQLiteCommand(sqlSelect, conexao))
                 {
+                    cmd.Parameters.AddWithValue("@placa", placa);
+                    cmd.Parameters.AddWithValue("@modelo", modelo);
+
                     using (SQLiteDataReader leitor = cmd.ExecuteReader())
                     {
                         while (leitor.Read())
