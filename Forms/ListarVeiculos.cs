@@ -1,5 +1,6 @@
 ﻿using EstacionamentoAuthSoft.Models;
 using EstacionamentoAuthSoft.Repositories;
+using EstacionamentoAuthSoft.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,7 +38,8 @@ namespace EstacionamentoAuthSoft.Forms
         private void CarregarLista()
         {
             VeiculoRepository veiculoRepository = new VeiculoRepository();
-            List<Veiculo> veiculos = veiculoRepository.ObterTodosOsVeiculos(txtPlaca.Text,txtModelo.Text);
+            string placa = Placa.FormatarPlaca(txtPlaca.Text);
+            List<Veiculo> veiculos = veiculoRepository.ObterTodosOsVeiculos(placa,txtModelo.Text);
 
             
             dataGridVeiculos.DataSource = veiculos;
