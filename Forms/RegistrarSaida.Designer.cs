@@ -166,6 +166,7 @@
             this.datePickerEntrada.Name = "datePickerEntrada";
             this.datePickerEntrada.Size = new System.Drawing.Size(600, 61);
             this.datePickerEntrada.TabIndex = 9;
+            this.datePickerEntrada.ValueChanged += new System.EventHandler(this.DatePickerEntrada_ValueChanged);
             // 
             // txtPlaca
             // 

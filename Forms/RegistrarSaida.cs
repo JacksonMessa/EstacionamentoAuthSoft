@@ -23,6 +23,9 @@ namespace EstacionamentoAuthSoft.Forms
             txtPlaca.Text = placa;
             this.estadiaId = estadiaId;
             this.entrada = entrada;
+
+            datePickerEntrada.MinDate = entrada;
+            timePickerEntrada.MinDate = entrada;
         }
 
         private void BtnVoltar_Click(object sender, EventArgs e)
@@ -67,6 +70,22 @@ namespace EstacionamentoAuthSoft.Forms
             {
                 MessageBox.Show($"Ocorreu um erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void DatePickerEntrada_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime apenasData = datePickerEntrada.Value.Date;
+            TimeSpan apenasHora = timePickerEntrada.Value.TimeOfDay;
+            DateTime horario = apenasData + apenasHora;
+            if (horario > entrada)
+            {
+                timePickerEntrada.Value = horario;
+            }
+            else
+            {
+                timePickerEntrada.Value = entrada;
+            }
+            
         }
     }
 }
