@@ -143,24 +143,33 @@
             // 
             // entrada
             // 
+            this.entrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.entrada.DataPropertyName = "entrada";
             this.entrada.HeaderText = "Entrada";
             this.entrada.MinimumWidth = 6;
             this.entrada.Name = "entrada";
             this.entrada.ReadOnly = true;
+            this.entrada.Width = 144;
             // 
             // permanencia
             // 
+            this.permanencia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.permanencia.DataPropertyName = "permanencia";
             this.permanencia.HeaderText = "Permanência";
             this.permanencia.MinimumWidth = 6;
             this.permanencia.Name = "permanencia";
             this.permanencia.ReadOnly = true;
+            this.permanencia.Width = 213;
             // 
             // valorAtual
             // 
+            this.valorAtual.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.valorAtual.DataPropertyName = "valorAtual";
             this.valorAtual.HeaderText = "Valor Atual";
             this.valorAtual.MinimumWidth = 6;
             this.valorAtual.Name = "valorAtual";
             this.valorAtual.ReadOnly = true;
+            this.valorAtual.Width = 188;
             // 
             // botoesSaida
             // 
@@ -184,6 +193,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Veículos Estacionados";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ConsultarEstacionados_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVeiculos)).EndInit();

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EstacionamentoAuthSoft.DTO;
+using EstacionamentoAuthSoft.Models;
+using EstacionamentoAuthSoft.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +26,20 @@ namespace EstacionamentoAuthSoft.Forms
 
             telaInicial.Show();
             this.Close();
+        }
+
+        private void ConsultarEstacionados_Load(object sender, EventArgs e)
+        {
+            dataGridVeiculos.AutoGenerateColumns = false;
+            CarregarLista();
+        }
+
+        private void CarregarLista()
+        {
+            EstadiaRepository estadiaRepository = new EstadiaRepository();
+            List<VeiculoEstacionadoDTO> veiculos = estadiaRepository.ObterEstacionados();
+
+            dataGridVeiculos.DataSource = veiculos;
         }
     }
 }

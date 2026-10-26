@@ -1,4 +1,5 @@
-﻿using EstacionamentoAuthSoft.Models;
+﻿using EstacionamentoAuthSoft.DTO;
+using EstacionamentoAuthSoft.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -66,6 +67,40 @@ namespace EstacionamentoAuthSoft.Repositories
                     return quantidade;
                 }
             }
+        }
+
+        public List<VeiculoEstacionadoDTO> ObterEstacionados()
+        {
+            string sqlSelect = "SELECT e.id,v.placa,v.modelo,e.entrada" +
+                " FROM estadia as e, veiculo as v" +
+                " where saida IS NULL AND v.id = e.veiculo_id";
+
+            List<VeiculoEstacionadoDTO> veiculos = new List<VeiculoEstacionadoDTO>();
+
+            using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
+            {
+                conexao.Open();
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlSelect, conexao))
+                {
+                    using (SQLiteDataReader leitor = cmd.ExecuteReader())
+                    {
+                        while (leitor.Read())
+                        {
+                            VeiculoEstacionadoDTO veiculo = new VeiculoEstacionadoDTO(
+                                Convert.ToInt32(leitor["id"]),
+                                leitor["placa"].ToString(),
+                                leitor["modelo"].ToString(),
+                                Convert.ToDateTime(leitor["entrada"]).ToString()
+                            );
+
+                            veiculos.Add(veiculo);
+                        }
+                    }
+                }
+            }
+
+            return veiculos;
         }
     }
 }
