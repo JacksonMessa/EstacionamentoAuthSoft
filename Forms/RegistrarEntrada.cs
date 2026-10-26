@@ -61,7 +61,7 @@ namespace EstacionamentoAuthSoft.Forms
                 VeiculoRepository veiculoRepository = new VeiculoRepository();
                 int veiculoId = veiculoRepository.ObterIdPelaPlaca(cmbPlaca.Text);
 
-                if (estadiaRepository.ContemVeiculoComOId(veiculoId))
+                if (estadiaRepository.ContemVeiculoComOIdEstacionado(veiculoId))
                 {
                     MessageBox.Show("O veículo selecionado já está registrado no momento!", "Campo Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

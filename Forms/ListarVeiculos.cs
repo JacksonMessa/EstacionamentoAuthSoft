@@ -72,10 +72,17 @@ namespace EstacionamentoAuthSoft.Forms
 
                     try
                     {
-
-                        veiculoRepository.Excluir(veiculo.Id);
-                        MessageBox.Show("Veiculo excluido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CarregarLista();
+                        EstadiaRepository estadiaRepository = new EstadiaRepository();
+                        if (estadiaRepository.ContemVeiculoComOIdEstacionado(veiculo.Id))
+                        {
+                            MessageBox.Show($"Não é possível excluir um veículo estacionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else 
+                        {
+                            veiculoRepository.Excluir(veiculo.Id);
+                            MessageBox.Show("Veiculo excluido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CarregarLista();
+                        }
                     }
                     catch (SQLiteException ex)
                     {
