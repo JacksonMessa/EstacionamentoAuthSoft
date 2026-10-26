@@ -88,14 +88,7 @@ namespace EstacionamentoAuthSoft.Forms
                     }
                     catch (SQLiteException ex)
                     {
-                        if (ex.ErrorCode == 19)
-                        {
-                            MessageBox.Show("Esta placa já está cadastrada no sistema!", "Placa Duplicada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            MessageBox.Show($"Ocorreu um erro inesperado no banco de dados: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show($"Ocorreu um erro inesperado no banco de dados: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch (Exception ex)
                     {
