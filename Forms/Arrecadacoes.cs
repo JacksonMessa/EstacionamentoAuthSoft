@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,61 @@ namespace EstacionamentoAuthSoft.Forms
             }
 
             lblTotal.Text = "Total: R$" + total;
+        }
+
+        private void BtnExportar_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog salvarCsvDialog = new SaveFileDialog())
+            {
+                salvarCsvDialog.Filter = "Arquivo CSV (*.csv)|*.csv|Todos os arquivos (*.*)|*.*";
+                salvarCsvDialog.Title = "Salvar Relatório CSV";
+                salvarCsvDialog.FileName = $"Relatorio_Estacionamento_{datePickerFiltro.Value:yyyyMMdd}.csv";
+
+                if (salvarCsvDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (StreamWriter sw = new StreamWriter(salvarCsvDialog.FileName, false, Encoding.UTF8))
+                        {
+                            StringBuilder linhaCsv = new StringBuilder();
+
+                            for (int i = 0; i < dataGridArrecadacoes.Columns.Count; i++)
+                            {
+
+                                    linhaCsv.Append(dataGridArrecadacoes.Columns[i].HeaderText);
+                                    if (i < dataGridArrecadacoes.Columns.Count - 1)
+                                        linhaCsv.Append(";"); 
+                            }
+                            sw.WriteLine(linhaCsv.ToString());
+
+                            foreach (DataGridViewRow row in dataGridArrecadacoes.Rows)
+                            {
+                                linhaCsv.Clear();
+                                for (int i = 0; i < dataGridArrecadacoes.Columns.Count; i++)
+                                {
+                                    var valor = row.Cells[i].Value;
+                                    linhaCsv.Append(valor != null ? valor.ToString() : "");
+
+                                    if (i < dataGridArrecadacoes.Columns.Count - 1)
+                                        linhaCsv.Append(";");
+                                }
+                                sw.WriteLine(linhaCsv.ToString());
+                            }
+
+                            sw.WriteLine();
+
+
+                            sw.WriteLine(lblTotal.Text);
+                        }
+
+                        MessageBox.Show("Arquivo CSV exportado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Erro ao exportar o arquivo: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

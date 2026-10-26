@@ -33,7 +33,7 @@
             this.dataGridArrecadacoes = new System.Windows.Forms.DataGridView();
             this.datePickerFiltro = new System.Windows.Forms.DateTimePicker();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +53,7 @@
             this.tableLayoutPanel.Controls.Add(this.dataGridArrecadacoes, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.datePickerFiltro, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.lblTotal, 1, 2);
+            this.tableLayoutPanel.Controls.Add(this.btnExportar, 0, 2);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
@@ -87,7 +88,6 @@
             this.dataGridArrecadacoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridArrecadacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridArrecadacoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
             this.placa,
             this.modelo,
             this.entrada,
@@ -130,14 +130,19 @@
             this.lblTotal.TabIndex = 11;
             this.lblTotal.Text = "Total: R$0";
             // 
-            // id
+            // btnExportar
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
+            this.btnExportar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnExportar.AutoSize = true;
+            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.Location = new System.Drawing.Point(31, 970);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(31, 3, 3, 3);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(425, 64);
+            this.btnExportar.TabIndex = 12;
+            this.btnExportar.Text = "Exportar para CSV";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.BtnExportar_Click);
             // 
             // placa
             // 
@@ -220,7 +225,7 @@
         private System.Windows.Forms.DataGridView dataGridArrecadacoes;
         private System.Windows.Forms.DateTimePicker datePickerFiltro;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.DataGridViewTextBoxColumn placa;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn entrada;
