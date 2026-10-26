@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.timePickerEntrada = new System.Windows.Forms.DateTimePicker();
+            this.timePickerSaida = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutForm = new System.Windows.Forms.TableLayoutPanel();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.lblPlaca = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblHorario = new System.Windows.Forms.Label();
-            this.datePickerEntrada = new System.Windows.Forms.DateTimePicker();
+            this.datePickerSaida = new System.Windows.Forms.DateTimePicker();
             this.txtPlaca = new System.Windows.Forms.TextBox();
             this.tableLayoutForm.SuspendLayout();
             this.SuspendLayout();
@@ -54,16 +54,16 @@
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Registro de Saída";
             // 
-            // timePickerEntrada
+            // timePickerSaida
             // 
-            this.timePickerEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.timePickerEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timePickerEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timePickerEntrada.Location = new System.Drawing.Point(1283, 414);
-            this.timePickerEntrada.Name = "timePickerEntrada";
-            this.timePickerEntrada.ShowUpDown = true;
-            this.timePickerEntrada.Size = new System.Drawing.Size(600, 61);
-            this.timePickerEntrada.TabIndex = 12;
+            this.timePickerSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.timePickerSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timePickerSaida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timePickerSaida.Location = new System.Drawing.Point(1283, 414);
+            this.timePickerSaida.Name = "timePickerSaida";
+            this.timePickerSaida.ShowUpDown = true;
+            this.timePickerSaida.Size = new System.Drawing.Size(600, 61);
+            this.timePickerSaida.TabIndex = 12;
             // 
             // tableLayoutForm
             // 
@@ -77,8 +77,8 @@
             this.tableLayoutForm.Controls.Add(this.lblData, 1, 2);
             this.tableLayoutForm.Controls.Add(this.btnRegistrar, 0, 4);
             this.tableLayoutForm.Controls.Add(this.lblHorario, 2, 2);
-            this.tableLayoutForm.Controls.Add(this.datePickerEntrada, 1, 3);
-            this.tableLayoutForm.Controls.Add(this.timePickerEntrada, 2, 3);
+            this.tableLayoutForm.Controls.Add(this.datePickerSaida, 1, 3);
+            this.tableLayoutForm.Controls.Add(this.timePickerSaida, 2, 3);
             this.tableLayoutForm.Controls.Add(this.txtPlaca, 0, 3);
             this.tableLayoutForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutForm.Location = new System.Drawing.Point(0, 0);
@@ -157,16 +157,16 @@
             this.lblHorario.TabIndex = 11;
             this.lblHorario.Text = "Horário";
             // 
-            // datePickerEntrada
+            // datePickerSaida
             // 
-            this.datePickerEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.datePickerEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerEntrada.Location = new System.Drawing.Point(661, 414);
-            this.datePickerEntrada.Name = "datePickerEntrada";
-            this.datePickerEntrada.Size = new System.Drawing.Size(600, 61);
-            this.datePickerEntrada.TabIndex = 9;
-            this.datePickerEntrada.ValueChanged += new System.EventHandler(this.DatePickerEntrada_ValueChanged);
+            this.datePickerSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.datePickerSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerSaida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerSaida.Location = new System.Drawing.Point(661, 414);
+            this.datePickerSaida.Name = "datePickerSaida";
+            this.datePickerSaida.Size = new System.Drawing.Size(600, 61);
+            this.datePickerSaida.TabIndex = 9;
+            this.datePickerSaida.ValueChanged += new System.EventHandler(this.DatePickerEntrada_ValueChanged);
             // 
             // txtPlaca
             // 
@@ -204,8 +204,8 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblHorario;
-        private System.Windows.Forms.DateTimePicker datePickerEntrada;
-        private System.Windows.Forms.DateTimePicker timePickerEntrada;
+        private System.Windows.Forms.DateTimePicker datePickerSaida;
+        private System.Windows.Forms.DateTimePicker timePickerSaida;
         private System.Windows.Forms.TextBox txtPlaca;
     }
 }

@@ -24,8 +24,8 @@ namespace EstacionamentoAuthSoft.Forms
             this.estadiaId = estadiaId;
             this.entrada = entrada;
 
-            datePickerEntrada.MinDate = entrada;
-            timePickerEntrada.MinDate = entrada;
+            datePickerSaida.MinDate = entrada;
+            timePickerSaida.MinDate = entrada;
         }
 
         private void BtnVoltar_Click(object sender, EventArgs e)
@@ -45,8 +45,8 @@ namespace EstacionamentoAuthSoft.Forms
         {
             EstadiaRepository estadiaRepository = new EstadiaRepository();
 
-            DateTime apenasData = datePickerEntrada.Value.Date;
-            TimeSpan apenasHora = timePickerEntrada.Value.TimeOfDay;
+            DateTime apenasData = datePickerSaida.Value.Date;
+            TimeSpan apenasHora = timePickerSaida.Value.TimeOfDay;
             DateTime saida = apenasData + apenasHora;
 
             try
@@ -74,16 +74,16 @@ namespace EstacionamentoAuthSoft.Forms
 
         private void DatePickerEntrada_ValueChanged(object sender, EventArgs e)
         {
-            DateTime apenasData = datePickerEntrada.Value.Date;
-            TimeSpan apenasHora = timePickerEntrada.Value.TimeOfDay;
+            DateTime apenasData = datePickerSaida.Value.Date;
+            TimeSpan apenasHora = timePickerSaida.Value.TimeOfDay;
             DateTime horario = apenasData + apenasHora;
             if (horario > entrada)
             {
-                timePickerEntrada.Value = horario;
+                timePickerSaida.Value = horario;
             }
             else
             {
-                timePickerEntrada.Value = entrada;
+                timePickerSaida.Value = entrada;
             }
             
         }
