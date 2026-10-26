@@ -50,5 +50,22 @@ namespace EstacionamentoAuthSoft.Repositories
                 }
             }
         }
+
+        public int ObterNumeroDeVagasOcupadas()
+        {
+            string sqlSelect = "SELECT COUNT(1) FROM estadia where saida IS NULL;";
+
+            using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
+            {
+                conexao.Open();
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlSelect, conexao))
+                {
+                    int quantidade = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return quantidade;
+                }
+            }
+        }
     }
 }

@@ -49,15 +49,21 @@ namespace EstacionamentoAuthSoft.Forms
 
             if (cmbPlaca.SelectedIndex == -1)
             {
-                MessageBox.Show("Nenhuma placa foi selecionada!", "Campo Inválio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else
+                MessageBox.Show("Nenhuma placa foi selecionada!", "Campo Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(estadiaRepository.ObterNumeroDeVagasOcupadas()>=10)
+            {
+                
+                MessageBox.Show("Não há vagas disponíveis!", "Estacionamento Cheio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
                 VeiculoRepository veiculoRepository = new VeiculoRepository();
                 int veiculoId = veiculoRepository.ObterIdPelaPlaca(cmbPlaca.Text);
 
                 if (estadiaRepository.ContemVeiculoComOId(veiculoId))
                 {
-                    MessageBox.Show("O veículo selecionado já está registrado no momento!", "Campo Inválio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("O veículo selecionado já está registrado no momento!", "Campo Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
