@@ -46,13 +46,18 @@ namespace EstacionamentoAuthSoft.Forms
             if(veiculoEdicao == null){
                 TelaInicial telaInicial = new TelaInicial();
                 telaInicial.Show();
+                this.Close();
             }
             else
             {
-                ListarVeiculos listarVeiculos = new ListarVeiculos();
-                listarVeiculos.Show();
-            }
-            
+                VoltarParaListagem();
+            }            
+        }
+
+        private void VoltarParaListagem()
+        {
+            ListarVeiculos listarVeiculos = new ListarVeiculos();
+            listarVeiculos.Show();
             this.Close();
         }
 
@@ -91,6 +96,7 @@ namespace EstacionamentoAuthSoft.Forms
                             if(veiculoRepository.Editar(veiculoEdicao.Id, placa, modelo, cor))
                             {
                                 MessageBox.Show("Veiculo editado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                VoltarParaListagem();
                             }
                             else
                             {
