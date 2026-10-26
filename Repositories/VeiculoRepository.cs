@@ -27,7 +27,7 @@ namespace EstacionamentoAuthSoft.Repositories
                 {
                     cmd.Parameters.AddWithValue("@placa", placa);
                     cmd.Parameters.AddWithValue("@modelo", modelo);
-                    cmd.Parameters.AddWithValue("@cor", modelo);
+                    cmd.Parameters.AddWithValue("@cor", cor);
 
                     bool houveLinhasAfetadas = cmd.ExecuteNonQuery() > 0;
                     return houveLinhasAfetadas;
