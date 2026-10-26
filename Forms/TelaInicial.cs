@@ -53,5 +53,14 @@ namespace EstacionamentoAuthSoft
 
             this.Hide();
         }
+
+        private void BtnArrecadacoes_Click(object sender, EventArgs e)
+        {
+            Arrecadacoes arrecadacoes = new Arrecadacoes();
+
+            arrecadacoes.Show();
+
+            this.Hide();
+        }
     }
 }

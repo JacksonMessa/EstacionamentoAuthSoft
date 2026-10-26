@@ -31,7 +31,7 @@
             this.lblEstacionamento = new System.Windows.Forms.Label();
             this.btnEntrada = new System.Windows.Forms.Button();
             this.BtnConsultarEstacionados = new System.Windows.Forms.Button();
-            this.btnRelatorio = new System.Windows.Forms.Button();
+            this.btnArrecadacoes = new System.Windows.Forms.Button();
             this.tableLayoutEstacionamento = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelVeiculos = new System.Windows.Forms.TableLayoutPanel();
             this.lblVeiculos = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.lblEstacionamento.Location = new System.Drawing.Point(2, 0);
             this.lblEstacionamento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstacionamento.Name = "lblEstacionamento";
-            this.lblEstacionamento.Size = new System.Drawing.Size(776, 86);
+            this.lblEstacionamento.Size = new System.Drawing.Size(796, 86);
             this.lblEstacionamento.TabIndex = 0;
             this.lblEstacionamento.Text = "ESTACIONAMENTO";
             this.lblEstacionamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -61,10 +61,10 @@
             this.btnEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEntrada.AutoSize = true;
             this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrada.Location = new System.Drawing.Point(70, 109);
+            this.btnEntrada.Location = new System.Drawing.Point(84, 111);
             this.btnEntrada.Margin = new System.Windows.Forms.Padding(0);
             this.btnEntrada.Name = "btnEntrada";
-            this.btnEntrada.Size = new System.Drawing.Size(120, 41);
+            this.btnEntrada.Size = new System.Drawing.Size(98, 36);
             this.btnEntrada.TabIndex = 0;
             this.btnEntrada.Text = "Entrada";
             this.btnEntrada.UseVisualStyleBackColor = true;
@@ -75,27 +75,28 @@
             this.BtnConsultarEstacionados.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnConsultarEstacionados.AutoSize = true;
             this.BtnConsultarEstacionados.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConsultarEstacionados.Location = new System.Drawing.Point(266, 109);
+            this.BtnConsultarEstacionados.Location = new System.Drawing.Point(275, 111);
             this.BtnConsultarEstacionados.Margin = new System.Windows.Forms.Padding(0);
             this.BtnConsultarEstacionados.Name = "BtnConsultarEstacionados";
-            this.BtnConsultarEstacionados.Size = new System.Drawing.Size(247, 41);
+            this.BtnConsultarEstacionados.Size = new System.Drawing.Size(247, 36);
             this.BtnConsultarEstacionados.TabIndex = 1;
             this.BtnConsultarEstacionados.Text = "Consutar Estacionados";
             this.BtnConsultarEstacionados.UseVisualStyleBackColor = true;
             this.BtnConsultarEstacionados.Click += new System.EventHandler(this.BtnConsultarEstacionados_Click);
             // 
-            // btnRelatorio
+            // btnArrecadacoes
             // 
-            this.btnRelatorio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRelatorio.AutoSize = true;
-            this.btnRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRelatorio.Location = new System.Drawing.Point(564, 109);
-            this.btnRelatorio.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(172, 41);
-            this.btnRelatorio.TabIndex = 2;
-            this.btnRelatorio.Text = "Relatorio p/ Dia";
-            this.btnRelatorio.UseVisualStyleBackColor = true;
+            this.btnArrecadacoes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnArrecadacoes.AutoSize = true;
+            this.btnArrecadacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArrecadacoes.Location = new System.Drawing.Point(562, 111);
+            this.btnArrecadacoes.Margin = new System.Windows.Forms.Padding(0);
+            this.btnArrecadacoes.Name = "btnArrecadacoes";
+            this.btnArrecadacoes.Size = new System.Drawing.Size(208, 36);
+            this.btnArrecadacoes.TabIndex = 2;
+            this.btnArrecadacoes.Text = "Arrecadação p/ Dia";
+            this.btnArrecadacoes.UseVisualStyleBackColor = true;
+            this.btnArrecadacoes.Click += new System.EventHandler(this.BtnArrecadacoes_Click);
             // 
             // tableLayoutEstacionamento
             // 
@@ -107,16 +108,16 @@
             this.tableLayoutEstacionamento.Controls.Add(this.lblEstacionamento, 0, 0);
             this.tableLayoutEstacionamento.Controls.Add(this.btnEntrada, 0, 1);
             this.tableLayoutEstacionamento.Controls.Add(this.BtnConsultarEstacionados, 1, 1);
-            this.tableLayoutEstacionamento.Controls.Add(this.btnRelatorio, 2, 1);
+            this.tableLayoutEstacionamento.Controls.Add(this.btnArrecadacoes, 2, 1);
             this.tableLayoutEstacionamento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutEstacionamento.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutEstacionamento.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutEstacionamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutEstacionamento.Name = "tableLayoutEstacionamento";
             this.tableLayoutEstacionamento.RowCount = 2;
             this.tableLayoutEstacionamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutEstacionamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutEstacionamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutEstacionamento.Size = new System.Drawing.Size(780, 173);
+            this.tableLayoutEstacionamento.Size = new System.Drawing.Size(800, 173);
             this.tableLayoutEstacionamento.TabIndex = 2;
             // 
             // tableLayoutPanelVeiculos
@@ -129,12 +130,12 @@
             this.tableLayoutPanelVeiculos.Controls.Add(this.btnListar, 1, 1);
             this.tableLayoutPanelVeiculos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelVeiculos.Location = new System.Drawing.Point(2, 179);
-            this.tableLayoutPanelVeiculos.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanelVeiculos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanelVeiculos.Name = "tableLayoutPanelVeiculos";
             this.tableLayoutPanelVeiculos.RowCount = 2;
             this.tableLayoutPanelVeiculos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelVeiculos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelVeiculos.Size = new System.Drawing.Size(780, 173);
+            this.tableLayoutPanelVeiculos.Size = new System.Drawing.Size(800, 173);
             this.tableLayoutPanelVeiculos.TabIndex = 3;
             // 
             // lblVeiculos
@@ -145,7 +146,7 @@
             this.lblVeiculos.Location = new System.Drawing.Point(2, 0);
             this.lblVeiculos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVeiculos.Name = "lblVeiculos";
-            this.lblVeiculos.Size = new System.Drawing.Size(776, 86);
+            this.lblVeiculos.Size = new System.Drawing.Size(796, 86);
             this.lblVeiculos.TabIndex = 0;
             this.lblVeiculos.Text = "VEÍCULOS";
             this.lblVeiculos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -155,10 +156,10 @@
             this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCadastrar.AutoSize = true;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(96, 109);
+            this.btnCadastrar.Location = new System.Drawing.Point(101, 111);
             this.btnCadastrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(120, 41);
+            this.btnCadastrar.Size = new System.Drawing.Size(117, 36);
             this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -169,10 +170,10 @@
             this.btnListar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnListar.AutoSize = true;
             this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.Location = new System.Drawing.Point(421, 109);
+            this.btnListar.Location = new System.Drawing.Point(455, 111);
             this.btnListar.Margin = new System.Windows.Forms.Padding(0);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(250, 41);
+            this.btnListar.Size = new System.Drawing.Size(210, 36);
             this.btnListar.TabIndex = 1;
             this.btnListar.Text = "Listar/Editar/Excluir";
             this.btnListar.UseVisualStyleBackColor = true;
@@ -187,21 +188,21 @@
             this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelVeiculos, 0, 1);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelMain.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 2;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(784, 354);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(804, 354);
             this.tableLayoutPanelMain.TabIndex = 4;
             // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 354);
+            this.ClientSize = new System.Drawing.Size(804, 354);
             this.Controls.Add(this.tableLayoutPanelMain);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TelaInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela Inicial";
@@ -219,7 +220,7 @@
         private System.Windows.Forms.Label lblEstacionamento;
         private System.Windows.Forms.Button btnEntrada;
         private System.Windows.Forms.Button BtnConsultarEstacionados;
-        private System.Windows.Forms.Button btnRelatorio;
+        private System.Windows.Forms.Button btnArrecadacoes;
         private System.Windows.Forms.TableLayoutPanel tableLayoutEstacionamento;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelVeiculos;
         private System.Windows.Forms.Label lblVeiculos;

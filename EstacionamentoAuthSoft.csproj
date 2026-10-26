@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\VeiculoEstacionadoDTO.cs" />
+    <Compile Include="Forms\Arrecadacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Arrecadacoes.Designer.cs">
+      <DependentUpon>Arrecadacoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CadastroVeiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <Compile Include="Repositories\EstadiaRepository.cs" />
     <Compile Include="Repositories\VeiculoRepository.cs" />
     <Compile Include="Utils\CalculoEstadia.cs" />
+    <EmbeddedResource Include="Forms\Arrecadacoes.resx">
+      <DependentUpon>Arrecadacoes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CadastroVeiculos.resx">
       <DependentUpon>CadastroVeiculos.cs</DependentUpon>
     </EmbeddedResource>
