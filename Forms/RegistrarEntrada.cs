@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EstacionamentoAuthSoft.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,19 @@ namespace EstacionamentoAuthSoft.Forms
 
             telaInicial.Show();
             this.Close();
+        }
+
+        private void RegistrarEntrada_Load(object sender, EventArgs e)
+        {
+            VeiculoRepository veiculoRepository = new VeiculoRepository();
+
+            List<string> placas = veiculoRepository.ObterTodasAsPlacas();
+
+            foreach (string placa in placas)
+            {
+                cmbPlaca.Items.Add(placa);
+            }
+            
         }
     }
 }

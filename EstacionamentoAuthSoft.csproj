@@ -66,6 +66,12 @@
     <Compile Include="Forms\ListarVeiculos.Designer.cs">
       <DependentUpon>ListarVeiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RegistrarEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegistrarEntrada.Designer.cs">
+      <DependentUpon>RegistrarEntrada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     <EmbeddedResource Include="Forms\ListarVeiculos.resx">
       <DependentUpon>ListarVeiculos.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegistrarEntrada.resx">
+      <DependentUpon>RegistrarEntrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

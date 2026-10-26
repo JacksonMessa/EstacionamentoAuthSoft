@@ -160,7 +160,9 @@
             this.cmbPlaca.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPlaca.FormattingEnabled = true;
+            this.cmbPlaca.IntegralHeight = false;
             this.cmbPlaca.Location = new System.Drawing.Point(40, 413);
+            this.cmbPlaca.MaxDropDownItems = 6;
             this.cmbPlaca.Name = "cmbPlaca";
             this.cmbPlaca.Size = new System.Drawing.Size(600, 62);
             this.cmbPlaca.TabIndex = 10;
@@ -186,6 +188,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Entrada";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.RegistrarEntrada_Load);
             this.tableLayoutForm.ResumeLayout(false);
             this.tableLayoutForm.PerformLayout();
             this.ResumeLayout(false);

@@ -67,6 +67,31 @@ namespace EstacionamentoAuthSoft.Repositories
             return veiculos;
         }
 
+        public List<string> ObterTodasAsPlacas()
+        {
+            List<string> placas = new List<string>();
+            string sqlSelect = "SELECT id, placa FROM veiculo;";
+
+            using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
+            {
+                conexao.Open();
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlSelect, conexao))
+                {
+                    using (SQLiteDataReader leitor = cmd.ExecuteReader())
+                    {
+                        while (leitor.Read())
+                        {
+                            placas.Add(leitor["placa"].ToString());
+                        }
+                        
+                    }
+                }
+            }
+
+            return placas;
+        }
+
         public bool Editar(int id, string placa, string modelo, string cor)
         {
             string sqlUpdate = "Update Veiculo " +
