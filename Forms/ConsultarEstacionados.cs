@@ -46,5 +46,25 @@ namespace EstacionamentoAuthSoft.Forms
         {
             CarregarLista();
         }
+
+        private void DataGridVeiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            string nomeColuna = dataGridVeiculos.Columns[e.ColumnIndex].Name;
+
+            if (nomeColuna == "botoesSaida")
+            {
+                VeiculoEstacionadoDTO veiculo = (VeiculoEstacionadoDTO)dataGridVeiculos.Rows[e.RowIndex].DataBoundItem;
+
+                RegistrarSaida registrarSaida = new RegistrarSaida(veiculo.Placa);
+                registrarSaida.Show();
+
+                this.Hide();
+            }
+        }
     }
 }

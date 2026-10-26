@@ -116,6 +116,7 @@
             this.dataGridVeiculos.RowTemplate.Height = 40;
             this.dataGridVeiculos.Size = new System.Drawing.Size(1918, 711);
             this.dataGridVeiculos.TabIndex = 0;
+            this.dataGridVeiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridVeiculos_CellContentClick);
             // 
             // id
             // 
@@ -170,7 +171,7 @@
             this.valorAtual.MinimumWidth = 6;
             this.valorAtual.Name = "valorAtual";
             this.valorAtual.ReadOnly = true;
-            this.valorAtual.Width = 218;
+            this.valorAtual.Width = 195;
             // 
             // botoesSaida
             // 
@@ -179,7 +180,7 @@
             this.botoesSaida.MinimumWidth = 6;
             this.botoesSaida.Name = "botoesSaida";
             this.botoesSaida.ReadOnly = true;
-            this.botoesSaida.Text = "Saida";
+            this.botoesSaida.Text = "Saída";
             this.botoesSaida.UseColumnTextForButtonValue = true;
             this.botoesSaida.Width = 34;
             // 

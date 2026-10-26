@@ -79,6 +79,12 @@
     <Compile Include="Forms\RegistrarEntrada.Designer.cs">
       <DependentUpon>RegistrarEntrada.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RegistrarSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegistrarSaida.Designer.cs">
+      <DependentUpon>RegistrarSaida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegistrarEntrada.resx">
       <DependentUpon>RegistrarEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegistrarSaida.resx">
+      <DependentUpon>RegistrarSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
