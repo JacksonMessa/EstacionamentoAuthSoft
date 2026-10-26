@@ -32,9 +32,9 @@ namespace EstacionamentoAuthSoft.Repositories
 
         }
 
-        public bool ContemVeiculoComOId(int veiculoId)
+        public bool ContemVeiculoComOIdEstacionado(int veiculoId)
         {
-            string sqlSelect = "SELECT COUNT(1) FROM estadia where veiculo_id = @veiculo_id;";
+            string sqlSelect = "SELECT COUNT(1) FROM estadia where veiculo_id = @veiculo_id AND saida IS NULL;";
 
             using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
             {
