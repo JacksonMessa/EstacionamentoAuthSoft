@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EstacionamentoAuthSoft.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -29,6 +30,25 @@ namespace EstacionamentoAuthSoft.Repositories
                 }
             }
 
+        }
+
+        public bool ContemVeiculoComOId(int veiculoId)
+        {
+            string sqlSelect = "SELECT COUNT(1) FROM estadia where veiculo_id = @veiculo_id;";
+
+            using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
+            {
+                conexao.Open();
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlSelect, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@veiculo_id", veiculoId);
+
+                    int quantidade = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return quantidade > 0;
+                }
+            }
         }
     }
 }
