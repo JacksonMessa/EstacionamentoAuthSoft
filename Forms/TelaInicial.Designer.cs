@@ -67,6 +67,7 @@
             this.btnEntrada.TabIndex = 0;
             this.btnEntrada.Text = "Entrada";
             this.btnEntrada.UseVisualStyleBackColor = true;
+            this.btnEntrada.Click += new System.EventHandler(this.BtnEntrada_Click);
             // 
             // BtnSaida
             // 

@@ -35,5 +35,14 @@ namespace EstacionamentoAuthSoft
 
             this.Hide();
         }
+
+        private void BtnEntrada_Click(object sender, EventArgs e)
+        {
+            RegistrarEntrada registrarEntrada = new RegistrarEntrada();
+
+            registrarEntrada.Show();
+
+            this.Hide();
+        }
     }
 }
