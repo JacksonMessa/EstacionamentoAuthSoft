@@ -92,6 +92,32 @@ namespace EstacionamentoAuthSoft.Repositories
             return placas;
         }
 
+        public int ObterIdPelaPlaca(string placa)
+        {
+            string sqlSelect = "SELECT id FROM veiculo where placa = @placa;";
+
+            using (SQLiteConnection conexao = new SQLiteConnection(conexaoString))
+            {
+                conexao.Open();
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlSelect, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@placa", placa);
+
+                    using (SQLiteDataReader leitor = cmd.ExecuteReader())
+                    {
+                        if (leitor.Read())
+                        {
+                            return Convert.ToInt32(leitor["id"]);
+                        }
+
+                    }
+                }
+            }
+
+            return -1;
+        }
+
         public bool Editar(int id, string placa, string modelo, string cor)
         {
             string sqlUpdate = "Update Veiculo " +
