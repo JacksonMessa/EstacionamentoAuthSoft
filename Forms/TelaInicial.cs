@@ -44,5 +44,14 @@ namespace EstacionamentoAuthSoft
 
             this.Hide();
         }
+
+        private void BtnConsultarEstacionados_Click(object sender, EventArgs e)
+        {
+            ConsultarEstacionados consultarEstacionados = new ConsultarEstacionados();
+
+            consultarEstacionados.Show();
+
+            this.Hide();
+        }
     }
 }
