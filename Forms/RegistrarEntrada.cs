@@ -79,7 +79,7 @@ namespace EstacionamentoAuthSoft.Forms
                         }
                         else
                         {
-                            MessageBox.Show($"Ocorreu um erro inesperado");
+                            MessageBox.Show("Ocorreu um erro inesperado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                         cmbPlaca.SelectedIndex = -1;
