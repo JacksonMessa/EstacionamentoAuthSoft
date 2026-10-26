@@ -1,5 +1,6 @@
 ﻿using EstacionamentoAuthSoft.Models;
 using EstacionamentoAuthSoft.Repositories;
+using EstacionamentoAuthSoft.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,8 +72,8 @@ namespace EstacionamentoAuthSoft.Forms
 
             if (ChecarCamposVazios(placa,modelo,cor))
             {
-                placa = FormatarPlaca(placa);
-                if (ValidarPlaca(placa))
+                placa = Placa.FormatarPlaca(placa);
+                if (Placa.ValidarPlaca(placa))
                 {
                     try
                     {
@@ -144,28 +145,6 @@ namespace EstacionamentoAuthSoft.Forms
             {
                 return true;
             }
-        }
-
-        private string FormatarPlaca(string placa)
-        {
-            if (placa.Length == 8 && placa[3] == '-')
-            {
-                placa = placa.Remove(3, 1);
-            }
-
-            return placa.ToUpper();
-        }
-
-        private bool ValidarPlaca(string placa)
-        {
-            string padrao = @"^[A-Z]{3}[0-9][A-Z0-9][0-9]{2}$";
-
-            bool placaevalida = Regex.IsMatch(placa, padrao);
-            if(!placaevalida)
-            {
-                MessageBox.Show("O campo de placa deve conter o formato antigo 'ABC1234' ou Mercosul 'ABC1D23'", "Campo Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return placaevalida;
         }
     }
 }

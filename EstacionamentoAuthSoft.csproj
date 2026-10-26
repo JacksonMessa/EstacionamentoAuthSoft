@@ -105,6 +105,7 @@
     <Compile Include="Repositories\EstadiaRepository.cs" />
     <Compile Include="Repositories\VeiculoRepository.cs" />
     <Compile Include="Utils\CalculoEstadia.cs" />
+    <Compile Include="Utils\Placa.cs" />
     <EmbeddedResource Include="Forms\Arrecadacoes.resx">
       <DependentUpon>Arrecadacoes.cs</DependentUpon>
     </EmbeddedResource>
