@@ -88,6 +88,7 @@
             this.btnRecarregar.TabIndex = 10;
             this.btnRecarregar.Text = "Recarregar";
             this.btnRecarregar.UseVisualStyleBackColor = true;
+            this.btnRecarregar.Click += new System.EventHandler(this.BtnRecarregar_Click);
             // 
             // dataGridVeiculos
             // 

@@ -41,5 +41,10 @@ namespace EstacionamentoAuthSoft.Forms
 
             dataGridVeiculos.DataSource = veiculos;
         }
+
+        private void BtnRecarregar_Click(object sender, EventArgs e)
+        {
+            CarregarLista();
+        }
     }
 }
